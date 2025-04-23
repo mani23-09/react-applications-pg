@@ -1,0 +1,87 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App-header {
+  background-color: white;
+  color:#4CAF50;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px 10px 0 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+input, select {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  width: 200px;
+}
+
+input:focus, select:focus {
+  border-color: #4CAF50;
+}
+
+span {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+select {
+  cursor: pointer;
+}

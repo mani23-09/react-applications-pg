@@ -1,0 +1,15 @@
+    var ex = require("express");
+    var app=ex();
+    var insert=require('./insert');
+    var server=require('./server');
+    var update=require('./update');
+    var read=require('./Read');
+    var deleted=require('./delete');
+    var ins=require('./insere');
+    app.use('/',insert);
+    app.use('/',update);
+    app.use('/',server);
+    app.use('/',read);
+    app.use('/',deleted);
+    app.use('/',ins);
+    app.listen(7654);
