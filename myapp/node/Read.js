@@ -3,7 +3,7 @@ var cors = require("cors");
 var app = ex();
 var { MongoClient } = require("mongodb");
 app.use(cors());
-var url = "mongodb+srv://cmani0395:manimani@cluster0.tuy7ost.mongodb.net/";
+var url = "mongodb+srv://cmani0395:manimani@cluster0.tuy7ost.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 var client = new MongoClient(url);
 
 app.get("/read", async (req, res) => {
