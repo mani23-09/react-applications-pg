@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button } from "@mui/material";
 
 export default function E_b() {
-  const [userID, setUserID] = useState(""); // State to hold user input
-
+  const [userID, setUserID] = useState(""); 
   const handleSubmit = () => {
     if (userID) {
       // Store the userID in sessionStorage
