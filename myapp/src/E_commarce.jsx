@@ -145,7 +145,6 @@ const FruitStore = () => {
         {activeTab === "purchase" && renderPurchaseTab()}
       </div>
 
-      {/* Dialog to Add New Fruit */}
       <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
         <DialogTitle>Add New Fruit</DialogTitle>
         <DialogContent>
