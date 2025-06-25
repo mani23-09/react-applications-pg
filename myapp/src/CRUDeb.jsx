@@ -28,7 +28,7 @@ const CRUD_EB = () => {
   });
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
-  const [snackbarSeverity, setSnackbarSeverity] = useState('success'); // 'success' or 'error'
+  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
   const fetchData = async () => {
     try {
@@ -117,7 +117,6 @@ const handleUpdateSubmit = async () => {
 const handleAddDataSubmit = async () => {
   try {
     const { id, name, currentunit, priviousunit } = newData;
-    // Construct the URL with correct query parameters for the GET request
     const response = await axios.get(`http://localhost:7654/inserteb?id=${id}&name=${name}&current=${currentunit}&privious=${priviousunit}`);
     
     if (response.data.message) {
@@ -152,10 +151,8 @@ const handleAddDataSubmit = async () => {
     <div>
       <h1>Electric Bill Records</h1>
 
-      {/* Add Data Button */}
       <Button variant="contained" color="primary" onClick={handleAddData}>Add Data</Button>
 
-      {/* Table displaying the data */}
       <table border="1">
         <thead>
           <tr>
@@ -189,7 +186,6 @@ const handleAddDataSubmit = async () => {
         </tbody>
       </table>
 
-      {/* Update Dialog using Material-UI Dialog component */}
       <Dialog open={updateDialogVisible} onClose={() => setUpdateDialogVisible(false)}>
         <DialogTitle>Update Record</DialogTitle>
         <DialogContent>
@@ -235,7 +231,6 @@ const handleAddDataSubmit = async () => {
         </DialogActions>
       </Dialog>
 
-      {/* Add Data Dialog using Material-UI Dialog component */}
       <Dialog open={addDialogVisible} onClose={() => setAddDialogVisible(false)}>
         <DialogTitle>Add New Record</DialogTitle>
         <DialogContent>
@@ -280,7 +275,6 @@ const handleAddDataSubmit = async () => {
         </DialogActions>
       </Dialog>
 
-      {/* Snackbar for Success/Error Message */}
       <Snackbar 
         open={snackbarOpen} 
         autoHideDuration={3000} 
