@@ -13,35 +13,34 @@ export default function EmployeeSalary() {
         const response = await axios.get(`http://localhost:7654/res?id=${sessionStorage.getItem('userID')}`);
         setData(response.data);  
       } catch (error) {
-        setError('Error fetching data');  // Set error message if the request fails
+        setError('Error fetching data'); 
         console.error('Error fetching data:', error);
       } finally {
-        setLoading(false);  // Set loading to false after request completes
+        setLoading(false); 
       }
     };
 
     fetchData();
-  }, []);  // Empty dependency array ensures this effect runs once when the component mounts
+  }, []);  
 
-  // Salary calculation functions
   const calculateGrossPay = (basicPay, hra, da) => {
-    return basicPay + hra + da;  // Gross pay is base salary plus HRA and DA
+    return basicPay + hra + da; 
   };
 
   const calculateDeductions = (it, lic, pf) => {
-    return it + lic + pf;  // Total deductions
+    return it + lic + pf;
   };
 
   const calculateNetPay = (grossPay, deductions) => {
-    return grossPay - deductions;  // Net pay is gross pay minus deductions
+    return grossPay - deductions;  
   };
 
   if (loading) {
-    return <p>Loading...</p>;  // Display loading text while waiting for the data
+    return <p>Loading...</p>; 
   }
 
   if (error) {
-    return <p>{error}</p>;  // Display error message if there was an error
+    return <p>{error}</p>;  
   }
 
   return (
@@ -65,7 +64,7 @@ export default function EmployeeSalary() {
               <p>Provident Fund: ₹{item.pf.toFixed(2)}</p>
               <p>Gross Pay: ₹{grossPay.toFixed(2)}</p>
               <p>Deductions: ₹{deductions.toFixed(2)}</p>
-              <p>Net Pay: ₹{netPay.toFixed(2)}</p> {/* Display net pay with ₹ symbol */}
+              <p>Net Pay: ₹{netPay.toFixed(2)}</p> 
             </div>
           );
         })
